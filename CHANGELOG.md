@@ -1,3 +1,34 @@
+# [3.0.0](https://github.com/E85Addict/revanced-library/compare/v2.3.0...v3.0.0) (2024-08-24)
+
+
+### Bug Fixes
+
+* Make functions internal which are supposed to be internal ([893d22d](https://github.com/E85Addict/revanced-library/commit/893d22d7938fa1c7544795635ed2ffacdd0cbf0d))
+
+
+### Build System
+
+* Refactor to DSL to bump ReVanced Patcher ([7f5d6da](https://github.com/E85Addict/revanced-library/commit/7f5d6dad7ba73e2ee53010241ba3204d04860a22))
+
+
+### Features
+
+* Add local Android installer ([#25](https://github.com/E85Addict/revanced-library/issues/25)) ([43d655a](https://github.com/E85Addict/revanced-library/commit/43d655aea5d86288ae9916630e0f30de219d5cfb))
+* Remove deprecated functions ([b9bf3bc](https://github.com/E85Addict/revanced-library/commit/b9bf3bc88284c0381c7370c3606b662da2ef380d))
+
+
+### Performance Improvements
+
+* --rip-lib ([eec3306](https://github.com/E85Addict/revanced-library/commit/eec330642aa08bf794a9ac0448ccd346a19ff0f1))
+* Personal Sync Upstream ([a7b785f](https://github.com/E85Addict/revanced-library/commit/a7b785f21beee2f1b0fc2ec02568509f20d1a9a9))
+
+
+### BREAKING CHANGES
+
+* Some functions have been removed.
+* Some functions are not available anymore.
+* The signature of some functions has changed.
+
 # [3.0.0](https://github.com/ReVanced/revanced-library/compare/v2.3.0...v3.0.0) (2024-08-06)
 
 
