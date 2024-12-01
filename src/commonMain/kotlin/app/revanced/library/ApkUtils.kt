@@ -50,7 +50,7 @@ object ApkUtils {
      *
      * @param apkFile The file to apply the patched files to.
      */
-    fun PatcherResult.applyTo(apkFile: File) {
+    fun PatcherResult.applyTo(apkFile: File, ripLibs: Array<String> ) {
         ZFile.openReadWrite(apkFile, zFileOptions).use { targetApkZFile ->
             dexFiles.forEach { dexFile ->
                 targetApkZFile.add(dexFile.name, dexFile.stream)
@@ -85,6 +85,10 @@ object ApkUtils {
                         entry.centralDirectoryHeader.name in resources.deleteResources
                     }.forEach(StoredEntry::delete)
                 }
+            }
+            if (ripLibs.isNotEmpty()) {
+                logger.info("Ripping selected native libs")
+                targetApkZFile.entries().filter { entry -> ripLibs.any { entry.centralDirectoryHeader.name.startsWith("lib/$it/") } }.forEach(StoredEntry::delete)
             }
 
             logger.info("Aligning APK")
