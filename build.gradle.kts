@@ -9,7 +9,7 @@ plugins {
     signing
 }
 
-group = "app.revanced"
+group = "e85.app.revanced"
 
 // Because access to the project is necessary to authenticate with GitHub,
 // the following block must be placed in the root build.gradle.kts file
@@ -21,6 +21,14 @@ repositories {
     maven {
         // A repository must be specified for some reason. "registry" is a dummy.
         url = uri("https://maven.pkg.github.com/revanced/registry")
+        credentials {
+            username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
+            password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+        }
+    }
+    maven {
+        // A repository must be speficied for some reason. "registry" is a dummy.
+        url = uri("https://maven.pkg.github.com/E85Addict/registry")
         credentials {
             username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
             password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
@@ -94,7 +102,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/revanced/revanced-library")
+            url = uri("https://maven.pkg.github.com/E85Addict/revanced-library")
             credentials {
                 username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
                 password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
@@ -125,11 +133,10 @@ publishing {
                     email = "contact@revanced.app"
                 }
             }
-
             scm {
-                connection = "scm:git:git://github.com/revanced/revanced-library.git"
-                developerConnection = "scm:git:git@github.com:revanced/revanced-library.git"
-                url = "https://github.com/revanced/revanced-library"
+                connection = "scm:git:git://github.com/E85Addict/revanced-library.git"
+                developerConnection = "scm:git:git@github.com:E85Addict/revanced-library.git"
+                url = "https://github.com/E85Addict/revanced-library"
             }
         }
     }
