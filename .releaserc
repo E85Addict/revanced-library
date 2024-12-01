@@ -14,7 +14,6 @@
         ]
       }
     ],
-    "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     "gradle-semantic-release-plugin",
     [
@@ -24,14 +23,7 @@
           "CHANGELOG.md",
           "gradle.properties"
         ],
-        "message": "chore: Release v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-      }
-    ],
-    [
-      "@saithodev/semantic-release-backmerge",
-      {
-        backmergeBranches: [{"from": "main", "to": "dev"}],
-        clearWorkspace: true
+        "message": "chore: Release v${nextRelease.version} [skip ci]\n\n'Change publication group id & --rip-lib'"
       }
     ],
     [
